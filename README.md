@@ -1,8 +1,10 @@
 # TankMaster
 
+Using this repo to share what data cleaning and analysis looks like in real-life for people to practice for data interviews etc.   
+
 This is based on my personal experience since I was actually given this task during one of my projects. It's the kind of messy spreadsheet that people have worked with organically over the years without proper data handling practices in mind.
 
-So here I will share a messy, semi-realistic (redacted to the best of my abilities) tank terminal dataset for practicing real-world data cleaning and analysis. The dataset is meant to be messy (less messy than the original thank God), and your job is to untangle it. The questions below will guide you through reshaping and operationalising the data, then using it to answer real business questions.
+In the repo you will find a messy, semi-realistic (redacted to the best of my abilities) tank terminal dataset. The dataset is meant to be messy (less messy than the original thank God), and your job is to untangle it. The questions below will guide you through reshaping and operationalising the data, then using it to answer real business questions.
 
 ## The Brief
 
@@ -15,15 +17,16 @@ The operators have sent over an export of their tank register. Your manager has 
 | File | Description |
 |---|---|
 | `tank.csv` | Raw dataset |
-| `tank.ipynb` | Notebook with questions |
+| `tank.ipynb` | Notebook with pre-filled questions so you can work on it directly |
+| `answer.html` | My go at answering the questions |
 
 ### What's in the Dataset
 
 Assume today's date is **December 2024**. Each row is one storage tank, and the columns include:
 
-1. **Basic tank details** — tank ID, capacity (m³), and product the tank is used to store (e.g. Crude, Gasoline, Diesel/Gasoil).
+1. **Basic tank details** — tank ID, capacity (m³), and type of product the tank stores (e.g. Crude, Gasoline, Diesel/Gasoil).
 2. **Capital expenditure (CAPEX) forecast** — planned spend on each tank from FY25 through FY34. A blank cell means no planned spend that year.
-3. **Operational availability** — a `1` means the tank was (or is expected to be) in operation that month, whereas a `0` or blank means it wasn't. Don't discard the historical months — you'll need them later.
+3. **Operational availability** — a `1` means the tank was (or is expected to be) in operation that month, whereas a `0` or blank cell means out of operation. The historical data will be needed later.
 
 ## Questions
 
