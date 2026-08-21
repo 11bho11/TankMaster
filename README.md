@@ -1,6 +1,6 @@
 # TankMaster
 
-Using this repo to share what data cleaning and analysis looks like in real-life for people to practice for data interviews etc.   
+Using this repo to share what data cleaning and analysis looks like in real-life for people to practice data interviews etc.   
 
 This is based on my personal experience since I was actually given this task during one of my projects. It's the kind of messy spreadsheet that people have worked with organically over the years without proper data handling practices in mind.
 
