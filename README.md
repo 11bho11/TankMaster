@@ -1,32 +1,37 @@
 # TankMaster
 
-A messy, semi-realistic tank terminal dataset for practicing real-world data cleaning and analysis.
+This is based on my personal experience since I was actually given this task during one of my projects. It's the kind of messy spreadsheet that people have worked with organically over the years without proper data handling practices in mind.
+
+So here I will share a messy, semi-realistic (redacted to the best of my abilities) tank terminal dataset for practicing real-world data cleaning and analysis. The dataset is meant to be messy (less messy than the original thank God), and your job is to untangle it. The questions below will guide you through reshaping and operationalising the data, then using it to answer real business questions.
 
 ## The Brief
 
-You're a data analyst who has just joined the finance team at a bulk liquid storage company. The company operates a **tank terminal** — a facility that stores oil, fuel, and chemical products on behalf of customers before the products are shipped onward.
+You're an analyst who has just joined a bulk liquid storage company. The company operates a **tank terminal** — a facility that stores oil and fuel products on behalf of customers.
 
-The operations team has sent over an export of their tank register. It's the kind of spreadsheet that's grown organically over the years: static tank details, multi-year financial forecasts, and monthly operational logs, all bolted together into one wide table by whoever needed it at the time. It works fine for them day-to-day, but it wasn't built with analysis in mind — and it shows.
+The operators have sent over an export of their tank register. Your manager has a set of business questions and needs your help. Before you can answer them, you'll need to make sense of the dataset yourself.
 
-Your manager needs clear answers to a handful of business questions before the next planning meeting. Before you can answer them, you'll need to make sense of the file yourself.
+### Files
 
-## What's in the File
+| File | Description |
+|---|---|
+| `tank.csv` | Raw dataset |
+| `tank.ipynb` | Notebook with questions |
 
-Assume today's date is **December 2024**. Each row is one storage tank, and the columns fall into three groups:
+### What's in the Dataset
 
-1. **Tank details** — a tank ID, its capacity in cubic metres (m³), and the product category it's used to store (e.g. Crude, Gasoline, Diesel/Gasoil).
-2. **Capital expenditure (CAPEX) forecast** — planned spend on each tank for financial years FY25 through FY34. A blank cell means no planned spend that year (treat it as 0).
-3. **Operational availability, historical and forecast** — one column per month, running from several years ago through to FY34. A `1` means the tank was (or is expected to be) in operation that month; a `0` or blank means it wasn't. Don't discard the historical months — you'll need them later.
+Assume today's date is **December 2024**. Each row is one storage tank, and the columns include:
 
-None of this is separated out for you — untangling it is your job. The questions below will guide you through reshaping the data and then using it to answer what the business actually wants to know.
+1. **Basic tank details** — tank ID, capacity (m³), and product the tank is used to store (e.g. Crude, Gasoline, Diesel/Gasoil).
+2. **Capital expenditure (CAPEX) forecast** — planned spend on each tank from FY25 through FY34. A blank cell means no planned spend that year.
+3. **Operational availability** — a `1` means the tank was (or is expected to be) in operation that month, whereas a `0` or blank means it wasn't. Don't discard the historical months — you'll need them later.
 
 ## Questions
 
-Work through these roughly in order — the first question has you reshape the data into a structure you'll reuse for everything that follows.
+Work through the questions in order.
 
-### 1. Reshaping the data
+### 1. Reshaping/Restructure the data
 
-Before doing any analysis, restructure the dataset into something you can actually work with. The questions below will make more sense once you've done this — use them as a guide for what your reshaped data needs to support. Consider: should the CAPEX and availability data stay in the same table as the tank details, or be split out? Would a long ("tidy") format work better than the current wide one for the monthly and yearly columns? Rename columns and reset indexes however makes sense to you.
+Before doing any analysis, restructure the dataset into something you can actually work with. The questions below will make more sense once you've done this — use them as a guide for what your reshaped data needs to support. Rename columns, split the dataset, or reset indexes - whichever makes the most sense to you.
 
 ### 2. Product mix
 
@@ -61,14 +66,3 @@ Before doing any analysis, restructure the dataset into something you can actual
 4.5. Break the available capacity from 4.4 down by product category.
 
 4.6. Take this further: aggregate available capacity by quarter and by year, averaging across each period's months based on tank availability.
-
-## Files
-
-| File | Description |
-|---|---|
-| `tank.csv` | The raw, messy dataset — one row per tank. |
-| `tank.ipynb` | Notebook containing the questions above, ready for you to fill in with your own analysis. |
-
-## License
-
-TBD.
